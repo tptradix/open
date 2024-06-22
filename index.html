@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LFsearch</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Bungee+Spice&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Monoton&family=Paytone+One&family=Poppins&family=Ramabhadra&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		body {
+			/*color: var(--tg-theme-text-color);
+			background: var(--tg-theme-bg-color);*/
+            padding: 0;
+		}
+
+		#main {
+			width: 100%;
+			padding: 17px;
+			text-align: center;
+			align-content: center;
+		}
+
+		h1 {
+			margin-bottom: 30px;
+			font-family: sans-serif;
+		}
+
+        h2 {
+            font-family: sans-serif;
+            font-size: 21px;
+        }
+
+		p {
+			width: auto;
+			margin: 0 auto;
+		}
+
+        span {
+            color: #797979;
+            font-size: 14px;
+            font-family: arial;
+        }
+
+		button {
+			border: 0;
+			border-radius: 5px;
+			margin-top: 50px;
+			height: 60px;
+			width: 200px;
+			font-size: 20px;
+			font-weight: 500;
+			cursor: pointer;
+			color:  var(--tg-theme-button-color);
+			background: var(--tg-theme-button-text-color);
+		}
+
+		button:hover {
+			background: var(--tg-theme-secondary-bg-color);
+		}
+
+        .paybot {
+            padding: 5px;
+            display: grid;
+            justify-content: center;
+        }
+
+		.paybot p{
+			text-align: center;
+			font-size: 15px;
+			font-family: arial;
+            margin: 0;
+            font-weight: 500;
+            color: #797979;
+		}
+
+		.paybot img{
+			border-radius: 15px;
+		}
+
+        .pay {
+            display: flex;
+            margin-bottom: 10px;
+        }
+
+        .pay p{
+			text-align: center;
+			font-size: 15px;
+			font-family: arial;
+            margin: 0;
+            font-weight: 500;
+            color: #797979;
+		}
+
+		.pay img{
+			border-radius: 15px;
+		}
+	</style>
+</head>
+<body>
+    <div id="root">
+        <div id="main">
+            <div>
+                <img width="70px" height="70px" src="https://em-content.zobj.net/source/telegram/386/purse_1f45b.webp">
+                <h1 style="font-size: 21px;">Пополнение баланса</h1>
+            </div>
+            <div>
+                <div style="margin: 0px; display: grid; justify-content: space-around;">
+                    <div class="pay">
+                        <div style="border: 1.5px solid #e5e7eb; width: 90vw; display: flex; border-radius: 5px; padding: 10px;">
+                            <div style="display: flex; align-items: center; margin-right: 15px;">
+                                <img width="50" height="50" src="https://gbsmarket.ru/wp-content/uploads/2023/07/sbp.png" id="cp">
+                            </div>
+                            <div>
+                                <div style="display: inline; padding-top: 5px;">
+                                    <h2 style="text-align: left;">СПБ</h2>
+                                </div>
+                                <div style="padding-top: 5px;">
+                                    <p>Доступно от 300 ₽</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pay">
+                        <div style="border: 1.5px solid #e5e7eb; width: 90vw; display: flex; border-radius: 5px; padding: 10px;">
+                            <div style="display: flex; align-items: center; margin-right: 15px;">
+                                <img width="50" height="50" src="https://avatars.githubusercontent.com/u/6553002?s=280&v=4" id="cp">
+                            </div>
+                            <div>
+                                <div style="display: inline; padding-top: 5px;">
+                                    <h2 style="text-align: left;">Yoomoney</h2>
+                                </div>
+                                <div style="padding-top: 5px;">
+                                    <p>Доступно от 300 ₽</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pay">
+                        <div style="border: 1.5px solid #e5e7eb; width: 90vw; display: flex; border-radius: 5px; padding: 10px;">
+                            <div style="display: flex; align-items: center; margin-right: 15px;">
+                                <img width="50" height="50" src="https://cdn-icons-png.freepik.com/512/62/62780.png" id="cp">
+                            </div>
+                            <div>
+                                <div style="display: inline; padding-top: 5px;">
+                                    <h2 style="text-align: left;">Карта</h2>
+                                </div>
+                                <div style="padding-top: 5px;">
+                                    <p>Доступно от 500 ₽</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 10px; margin-bottom: 10px;">
+                    <div style="height: 1px; background: #e5e7eb; width: 80%;"></div>
+                    <div style="width: 80%;">
+                        <span>Другие способы</span>
+                    </div>
+                    <div style="height: 1px; background: #e5e7eb; width: 80%;"></div>
+                </div>
+                <div style="margin: 0px; display: flex; justify-content: space-between;">
+                    <div class="paybot">
+                        <div style="border: 1.5px solid #e5e7eb; width: 25vw; height: 17vh; display: grid; justify-content: center; border-radius: 5px;">
+                            <div style="display: grid; justify-content: center; align-items: center;">
+                                <img width="50" height="50" src="https://novator.io/wp-content/uploads/2022/04/Razrabotchiki-Crypto-Bot-zapustili-kriptobirzhu-v-Telegram.jpg" id="cp">
+                            </div>
+                            <div style="display: inline; padding-top: 5px;">
+                                <p>CryptoBot</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="paybot">
+                        <div style="border: 1.5px solid #e5e7eb; width: 25vw; height: 17vh; display: grid; justify-content: center; border-radius: 5px;">
+                            <div style="display: grid; justify-content: center; align-items: center;">
+                                <img width="50" height="50" src="https://cdn.worldvectorlogo.com/logos/telegram-1.svg" id="cp">
+                            </div>
+                            <div style="display: grid; padding-top: 5px;">
+                                <p>Поддержка</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="paybot">
+                        <div style="border: 1.5px solid #e5e7eb; width: 25vw; height: 17vh; display: grid; justify-content: center; border-radius: 5px;">
+                            <div style="display: grid; justify-content: center; align-items: center;">
+                                <img width="50" height="50" src="https://anypay.io/template/img/merchant/logo.svg" id="cp">
+                            </div>
+                            <div style="display: grid; padding-top: 5px;">
+                                <p>AnyPay</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+		</div>
+    </div>
+</body>
+</html>
