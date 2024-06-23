@@ -107,7 +107,7 @@
 <body>
     <div id="root">
         <div id="main">
-            <form id="form" style="display: block;">
+            <form method="POST" id="form" name="data">
                 <div class="paybot">
                     <div>
                         <h1>CryptoBot</h1>
@@ -120,15 +120,24 @@
                     </div>
                 </div>
                 <div>
-                    <input type="number" placeholder="Count" id="usdt" min="1" max="100">
+                    <input type="number" placeholder="Count" id="usdt" name="count" min="1" max="100">
                 </div>
             </form>
 		</div>
     </div>
     <script>
         const tg = window.Telegram.WebApp;
-        tg.MainButton.show();
-        tg.MainButton.setText("Продолжть");
+        let usdt = document.getElementById('usdt');
+        usdt.addEventListener('input', () => {
+            if(parseFloat(usdt.value) > 0 && parseFloat(usdt.value) < 101) {
+                tg.MainButton.show();
+                tg.MainButton.setText("Продолжть");
+            }
+            else {
+                tg.MainButton.hide();
+            }
+        });
     </script>
 </body>
 </html>
+
