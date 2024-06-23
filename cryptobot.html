@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LFsearch</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Bungee+Spice&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Monoton&family=Paytone+One&family=Poppins&family=Ramabhadra&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		body {
+            padding: 0;
+            background: #ffffff;
+		}
+
+		#main {
+			width: 100%;
+			padding: 17px;
+			text-align: center;
+			align-content: center;
+		}
+
+		h1 {
+			margin-bottom: 30px;
+			font-family: sans-serif;
+		}
+
+        h2 {
+            font-family: sans-serif;
+            font-size: 21px;
+        }
+
+		p {
+			width: auto;
+			margin: 0 auto;
+		}
+
+        span {
+            color: #797979;
+            font-size: 14px;
+            font-family: arial;
+        }
+
+		button {
+			border: 0;
+			border-radius: 5px;
+			margin-top: 50px;
+			height: 60px;
+			width: 200px;
+			font-size: 20px;
+			font-weight: 500;
+			cursor: pointer;
+		}
+
+        .paybot {
+            padding: 5px;
+            display: grid;
+            justify-content: center;
+        }
+
+		.paybot p{
+            text-align: center;
+            font-size: 17px;
+            font-family: sans-serif;
+		}
+
+		.paybot img{
+			border-radius: 15px;
+		}
+
+        .pay {
+            display: flex;
+            margin-bottom: 10px;
+        }
+
+        .pay p{
+			text-align: center;
+			font-size: 15px;
+			font-family: arial;
+            margin: 0;
+            font-weight: 500;
+            color: #797979;
+		}
+
+		.pay img{
+			border-radius: 15px;
+		}
+
+        input {
+			width: 65%;
+			outline: none;
+			margin: 10 px 5%;
+			padding: 15px 10px;
+			font-size: 14px;
+			border: 2 solid silver;
+			border-radius: 5px;
+			margin-top: 20px;
+		}
+	</style>
+</head>
+<body>
+    <div id="root">
+        <div id="main">
+            <form id="form" style="display: block;">
+                <div class="paybot">
+                    <div>
+                        <h1>CryptoBot</h1>
+                    </div>
+                    <div>
+                        <img width="60" height="60" src="https://novator.io/wp-content/uploads/2022/04/Razrabotchiki-Crypto-Bot-zapustili-kriptobirzhu-v-Telegram.jpg">
+                    </div>
+                    <div style="padding-top: 10px;">
+                        <p>CryptoBot - бот для оплаты счета, чтобы пополнить баланс кошелька необходимо указать сумму оплаты</p>
+                    </div>
+                </div>
+                <div>
+                    <input type="number" placeholder="Count" id="usdt" min="1" max="100">
+                </div>
+            </form>
+		</div>
+    </div>
+    <script>
+        const tg = window.Telegram.WebApp;
+        tg.MainButton.show();
+        tg.MainButton.setText("Start");
+    </script>
+</body>
+</html>
